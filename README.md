@@ -1,4 +1,14 @@
 # Delete-Old-Kernels
-# Use the Script on Ubuntu Systems and derivates.
-# Run the script: ./deleteOldKernels.bash
+ Use the Script on Ubuntu Systems and derivates.
+
+Description
+
+The scripts searches for old kernels and the user is asked if he want to delete the old ones and after the grub is updated. 
+It is best to reboot when the script is terminated.
+
+Tested on:
+Maui, Ubuntu and Mint operating systems.
+
+Don't forget to run the script as sudo: sudo ./deleteOldKernels.bash
+
 # By am0nt031r0
