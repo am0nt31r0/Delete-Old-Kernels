@@ -10,7 +10,7 @@ It is best to reboot when the script is terminated.
 Maui, Ubuntu and Mint operating systems.
 
 # Before Running Install
-sudo apt install lolcat
+sudo apt install lolcat figlet
 
 # Run
 Don't forget to run the script as: bash ./deleteOldKernels.bash
