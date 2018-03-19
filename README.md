@@ -9,7 +9,10 @@ It is best to reboot when the script is terminated.
 # Tested on
 Maui, Ubuntu and Mint operating systems.
 
+# Before Running Install
+sudo apt install lolcat
+
 # Run
-Don't forget to run the script as sudo: sudo ./deleteOldKernels.bash
+Don't forget to run the script as: bash ./deleteOldKernels.bash
 
 By am0nt031r0
