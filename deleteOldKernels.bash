@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# execute: bash ./deleteOldKernels.bash
-
-# Colors
-PU='\033[0;35m'
-BL='\033[1;34m'
-GR='\033[0;32m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-
-# Current and Old Kernels
-cKernel=`uname -r`
-oldKernels=`dpkg --list | egrep 'linux-image-(extra|[0-9]+)' | awk '{ print $2 }' | sort -V | grep -v $cKernel | xargs`
-
 function presentation {
 
 	figlet "Delete Old Kernels" | lolcat
@@ -39,8 +26,7 @@ function delete_n_update {
 
 	if [ "$answer" == "y" ]
 	then
-
-		echo -e "\n\nIt will be needed to put super user credentials to delete old kernels and update grub...\n\n" 
+		echo -e "\n[${RED}+${NC}] It will be needed to put super user credentials to delete old kernels and update grub...\n\n" 
 		sudo apt-get purge $oldKernels
 		sudo update-grub2
 
@@ -52,14 +38,22 @@ function delete_n_update {
 }
 
 function terminate {
-
 	echo -e "${PU}By am0nt031r0${NC}" 
 	exit
-
 }
+
+# Colors
+PU='\033[0;35m'
+BL='\033[1;34m'
+GR='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+# Current and Old Kernels
+cKernel=`uname -r`
+oldKernels=`dpkg --list | egrep 'linux-image-(extra|[0-9]+)' | awk '{ print $2 }' | sort -V | grep -v $cKernel | xargs`
+
 
 presentation
 delete_n_update
 terminate
-
-
