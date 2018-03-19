@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # execute: bash ./deleteOldKernels.bash
 
