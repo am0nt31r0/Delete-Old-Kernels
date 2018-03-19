@@ -20,7 +20,6 @@ function presentation {
 	if [ "$oldKernels" == "" ]
 	then	
 		echo -e "There aren't any old kernels to delete.\n"
-		echo $made
 		exit
 	fi
 
@@ -35,9 +34,7 @@ function delete_n_update {
 
 	until [ "$answer" == "y" -o "$answer" == "n" ]
 	do 
-
 		read answer
-
 	done
 
 	if [ "$answer" == "y" ]
@@ -45,12 +42,10 @@ function delete_n_update {
 
 		echo -e "\n\nIt will be needed to put super user credentials to delete old kernels and update grub...\n\n" 
 		sudo apt-get purge $oldKernels
-		echo -e "\n\nIt will be needed to put super-user credentials to update grub...\n\n" 
 		sudo update-grub2
 
 	elif [ "$answer" == "n" ]
 	then
-
 		echo -e "\n\nScript terminated...\n"
 	fi
 
