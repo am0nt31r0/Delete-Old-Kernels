@@ -27,8 +27,9 @@ function delete_n_update {
 	if [ "$answer" == "y" ]
 	then
 		echo -e "\n[${RED}+${NC}] It will be needed to put super user credentials to delete old kernels and update grub...\n\n" 
-		sudo apt-get purge $oldKernels
-		sudo update-grub2
+		sudo apt-get purge $oldKernels > /dev/null
+		y
+		sudo update-grub2 > /dev/null
 
 	elif [ "$answer" == "n" ]
 	then
